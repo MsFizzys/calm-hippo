@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rates — Emily Stevens Bodywork</title>
+  <meta name="description" content="Massage therapy rates for Calm Hippo. In-studio sessions from $100, in-home massage, sound healing, and private event chair massage in Petaluma and Willits, CA."/>
+  <meta name="keywords" content="massage prices Petaluma, massage rates Willits, sound healing cost, in-home massage Northern California, chair massage events"/>
+  <meta property="og:title" content="Rates — Calm Hippo"/>
+  <meta property="og:description" content="In-studio, in-home, sound healing, and event massage rates. Serving Petaluma and Willits, California."/>
+  <meta property="og:type" content="website"/>
+  <meta name="theme-color" content="#1e1a12"/>
+  <title>Rates — Calm Hippo | Petaluma & Willits, CA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet"/>
   <style>
     :root {
-      --green-deep:   #3b4a2f;
-      --green-mid:    #5a6e42;
-      --green-light:  #8a9e6a;
-      --brown-deep:   #5c3d2e;
-      --brown-mid:    #8b5e3c;
-      --brown-light:  #c49a6c;
-      --orange-warm:  #c9713a;
-      --orange-light: #e8a96a;
-      --cream:        #f7f2eb;
-      --cream-dark:   #ede4d6;
-      --text-dark:    #2e2318;
-      --text-mid:     #5a4535;
+      --green-deep:  #3b4a2f;
+      --green-mid:   #5a6e42;
+      --brown-deep:  #5c3d2e;
+      --brown-mid:   #8b5e3c;
+      --brown-light: #c49a6c;
+      --orange-warm: #c9713a;
+      --orange-light:#e8a96a;
+      --cream:       #f7f2eb;
+      --cream-dark:  #ede4d6;
+      --text-dark:   #2e2318;
+      --text-mid:    #5a4535;
     }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    img { max-width:100%; display:block; }
 
     body {
       background:
@@ -33,480 +40,194 @@
         var(--cream);
       color: var(--text-dark);
       font-family: 'Lora', serif;
+      font-size: 16px;
+      line-height: 1.6;
       overflow-x: hidden;
       position: relative;
+      -webkit-text-size-adjust: 100%;
     }
-
-    /* Buddha background — shifted LEFT this time */
     body::before {
-      content: '';
-      position: fixed;
-      top: -5%;
-      left: -8%;
-      width: 75%;
-      height: 110%;
-      background-image: url('buddha.png');
-      background-size: cover;
-      background-position: center;
-      filter: blur(6px) saturate(0.7) opacity(0.13);
-      z-index: 0;
-      pointer-events: none;
+      content:'';
+      position:fixed;
+      top:-5%; left:-8%;
+      width:75%; height:110%;
+      background-image:url('buddha.png');
+      background-size:cover;
+      background-position:center;
+      filter:blur(6px) saturate(0.7) opacity(0.13);
+      z-index:0;
+      pointer-events:none;
+    }
+    header,footer,section,nav,main,div { position:relative; z-index:1; }
+
+    /* HEADER */
+    header { background: radial-gradient(ellipse at 20% 50%,#5c3d2e 0%,transparent 60%), radial-gradient(ellipse at 80% 30%,#3b2a1a 0%,transparent 55%), radial-gradient(ellipse at 55% 80%,#6b4423 0%,transparent 50%), radial-gradient(ellipse at 10% 10%,#2e3d22 0%,transparent 50%), radial-gradient(ellipse at 90% 90%,#7a3e1a 0%,transparent 45%), radial-gradient(ellipse at 50% 20%,rgba(232,200,160,0.22) 0%,transparent 45%), radial-gradient(ellipse at 35% 70%,rgba(247,230,200,0.15) 0%,transparent 40%), radial-gradient(ellipse at 70% 55%,rgba(138,158,106,0.18) 0%,transparent 40%), #1e1a12; overflow:hidden; }
+    .header-motif { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; opacity:0.55; }
+    .header-top { display:flex; justify-content:center; align-items:center; padding:20px 16px 12px; }
+    .logo-wrap { border:2px dashed var(--orange-light); border-radius:12px; padding:8px 16px; display:inline-flex; align-items:center; justify-content:center; }
+    .logo-img { height:60px; width:auto; max-width:180px; object-fit:contain; }
+    .header-nav { display:flex; justify-content:space-evenly; align-items:center; flex-wrap:wrap; gap:2px; padding:8px 12px 16px; border-top:1px solid rgba(232,169,106,0.3); }
+    .header-nav a { color:var(--cream); text-decoration:none; font-family:'Cormorant Garamond',serif; font-size:0.82rem; letter-spacing:0.09em; text-transform:uppercase; font-weight:300; padding:8px 6px; transition:color 0.3s; position:relative; white-space:nowrap; -webkit-tap-highlight-color:transparent; min-height:44px; display:inline-flex; align-items:center; }
+    .header-nav a::after { content:''; position:absolute; bottom:4px; left:6px; right:6px; height:1px; background:var(--orange-light); transform:scaleX(0); transition:transform 0.3s; }
+    .header-nav a:hover, .header-nav a.active { color:var(--orange-light); }
+    .header-nav a:hover::after, .header-nav a.active::after { transform:scaleX(1); }
+
+    /* PAGE TITLE */
+    .page-title { text-align:center; padding:40px 20px 32px; }
+    .page-title h1 { font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:300; letter-spacing:0.18em; text-transform:uppercase; color:var(--brown-deep); margin-bottom:12px; }
+    .section-rule { width:60px; height:2px; background:linear-gradient(90deg,var(--orange-warm),var(--brown-light)); margin:0 auto; border-radius:2px; }
+
+    /* RATES */
+    main { max-width:860px; margin:0 auto; padding:0 20px 64px; }
+    .rate-category { margin-bottom:44px; opacity:0; transform:translateY(20px); animation:fadeUp 0.8s ease forwards; }
+    .rate-category:nth-child(1){animation-delay:0.1s}
+    .rate-category:nth-child(2){animation-delay:0.25s}
+    .rate-category:nth-child(3){animation-delay:0.4s}
+    .rate-category:nth-child(4){animation-delay:0.55s}
+    .rate-category h2 { font-family:'Cormorant Garamond',serif; font-size:1.35rem; font-weight:400; letter-spacing:0.1em; text-transform:uppercase; color:var(--green-deep); margin-bottom:4px; }
+    .category-note { font-size:0.88rem; font-style:italic; color:var(--brown-light); margin-bottom:14px; letter-spacing:0.04em; }
+
+    table { width:100%; border-collapse:collapse; }
+    thead tr { border-bottom:2px solid var(--orange-warm); }
+    thead th { font-family:'Cormorant Garamond',serif; font-size:0.78rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--brown-mid); padding:8px 12px; text-align:left; font-weight:400; }
+    tbody tr { border-bottom:1px solid rgba(196,154,108,0.25); transition:background 0.2s; }
+    tbody tr:last-child { border-bottom:none; }
+    tbody tr:hover { background:rgba(247,242,235,0.85); }
+    tbody td { padding:14px 12px; font-size:1rem; color:var(--text-mid); }
+    tbody td:last-child { font-family:'Cormorant Garamond',serif; font-size:1.18rem; font-weight:400; color:var(--orange-warm); text-align:right; letter-spacing:0.04em; }
+    .rate-note { margin-top:10px; font-size:0.85rem; font-style:italic; color:var(--brown-light); padding-left:4px; }
+    .rate-divider { width:100%; height:1px; background:linear-gradient(90deg,transparent,var(--brown-light),transparent); margin:4px 0 44px; opacity:0.4; }
+
+    /* BOOK NOW */
+    .book-now-banner { background:var(--brown-deep); padding:44px 20px; text-align:center; }
+    .book-now-banner h2 { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:300; letter-spacing:0.08em; color:var(--cream); margin-bottom:8px; }
+    .book-now-banner p { font-size:0.9rem; color:var(--brown-light); font-style:italic; margin-bottom:24px; }
+    .btn-book { display:inline-block; background:var(--orange-warm); color:var(--cream); text-decoration:none; font-family:'Cormorant Garamond',serif; font-size:1rem; letter-spacing:0.13em; text-transform:uppercase; padding:14px 36px; border-radius:50px; transition:background 0.3s,transform 0.2s; -webkit-tap-highlight-color:transparent; min-height:48px; line-height:1.4; }
+    .btn-book:hover { background:var(--brown-mid); transform:translateY(-2px); }
+
+    /* FOOTER */
+    footer { background: radial-gradient(ellipse at 15% 60%,#7a3e1a 0%,transparent 55%), radial-gradient(ellipse at 75% 30%,#5c3d2e 0%,transparent 50%), radial-gradient(ellipse at 45% 90%,#3b4a2f 0%,transparent 50%), radial-gradient(ellipse at 85% 80%,#8b5e3c 0%,transparent 45%), radial-gradient(ellipse at 5% 20%,#6b4423 0%,transparent 45%), #1e1a12; padding:28px 20px; text-align:center; overflow:hidden; }
+    .footer-motif { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; opacity:0.5; }
+    footer p { font-family:'Cormorant Garamond',serif; font-size:0.83rem; letter-spacing:0.07em; color:var(--brown-light); position:relative; z-index:2; }
+    footer a { color:var(--orange-light); text-decoration:none; }
+
+    @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+
+    /* TABLET */
+    @media (min-width:600px) {
+      .logo-img { height:72px; max-width:200px; }
+      .header-nav a { font-size:0.92rem; letter-spacing:0.12em; }
+      .page-title h1 { font-size:2.2rem; }
+      main { padding:0 40px 72px; }
+      tbody td { padding:16px; }
     }
 
-    header, footer, section, nav, main {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* ── HEADER ── */
-    header {
-      background: radial-gradient(ellipse at 20% 50%, #5c3d2e 0%, transparent 60%),
-                  radial-gradient(ellipse at 80% 30%, #3b2a1a 0%, transparent 55%),
-                  radial-gradient(ellipse at 55% 80%, #6b4423 0%, transparent 50%),
-                  radial-gradient(ellipse at 10% 10%, #2e3d22 0%, transparent 50%),
-                  radial-gradient(ellipse at 90% 90%, #7a3e1a 0%, transparent 45%),
-                  radial-gradient(ellipse at 50% 20%, rgba(232,200,160,0.22) 0%, transparent 45%),
-                  radial-gradient(ellipse at 35% 70%, rgba(247,230,200,0.15) 0%, transparent 40%),
-                  radial-gradient(ellipse at 70% 55%, rgba(138,158,106,0.18) 0%, transparent 40%),
-                  #1e1a12;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .header-motif {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.55;
-    }
-
-    .header-top {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 28px 40px 16px;
-    }
-
-    .logo-img {
-      height: 80px;
-      width: auto;
-      max-width: 220px;
-      object-fit: contain;
-    }
-
-    .header-nav {
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      padding: 10px 60px 20px;
-      border-top: 1px solid rgba(232,169,106,0.3);
-    }
-
-    .header-nav a {
-      color: var(--cream);
-      text-decoration: none;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      font-weight: 300;
-      transition: color 0.3s;
-      position: relative;
-    }
-
-    .header-nav a::after {
-      content: '';
-      position: absolute;
-      bottom: -3px;
-      left: 0; right: 0;
-      height: 1px;
-      background: var(--orange-light);
-      transform: scaleX(0);
-      transition: transform 0.3s;
-    }
-
-    .header-nav a:hover { color: var(--orange-light); }
-    .header-nav a:hover::after { transform: scaleX(1); }
-    .header-nav a.active { color: var(--orange-light); }
-    .header-nav a.active::after { transform: scaleX(1); }
-
-    /* ── PAGE TITLE ── */
-    .page-title {
-      text-align: center;
-      padding: 56px 40px 40px;
-    }
-
-    .page-title h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.4rem;
-      font-weight: 300;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--brown-deep);
-      margin-bottom: 12px;
-    }
-
-    .section-rule {
-      width: 60px;
-      height: 2px;
-      background: linear-gradient(90deg, var(--orange-warm), var(--brown-light));
-      margin: 0 auto;
-      border-radius: 2px;
-    }
-
-    /* ── RATES MAIN ── */
-    main {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 0 40px 80px;
-    }
-
-    /* ── RATE CATEGORY ── */
-    .rate-category {
-      margin-bottom: 52px;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 0.8s ease forwards;
-    }
-
-    .rate-category:nth-child(1) { animation-delay: 0.1s; }
-    .rate-category:nth-child(2) { animation-delay: 0.25s; }
-    .rate-category:nth-child(3) { animation-delay: 0.4s; }
-    .rate-category:nth-child(4) { animation-delay: 0.55s; }
-
-    .rate-category h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      font-weight: 400;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--green-deep);
-      margin-bottom: 6px;
-    }
-
-    .rate-category .category-note {
-      font-size: 0.92rem;
-      font-style: italic;
-      color: var(--brown-light);
-      margin-bottom: 18px;
-      letter-spacing: 0.04em;
-    }
-
-    /* ── TABLE ── */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    thead tr {
-      border-bottom: 2px solid var(--orange-warm);
-    }
-
-    thead th {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--brown-mid);
-      padding: 10px 16px;
-      text-align: left;
-      font-weight: 400;
-    }
-
-    tbody tr {
-      border-bottom: 1px solid rgba(196,154,108,0.25);
-      transition: background 0.2s;
-    }
-
-    tbody tr:last-child { border-bottom: none; }
-
-    tbody tr:hover {
-      background: rgba(247,242,235,0.85);
-    }
-
-    tbody td {
-      padding: 16px 16px;
-      font-size: 1.05rem;
-      color: var(--text-mid);
-    }
-
-    tbody td:last-child {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.25rem;
-      font-weight: 400;
-      color: var(--orange-warm);
-      text-align: right;
-      letter-spacing: 0.05em;
-    }
-
-    .rate-note {
-      margin-top: 12px;
-      font-size: 0.88rem;
-      font-style: italic;
-      color: var(--brown-light);
-      padding-left: 4px;
-    }
-
-    /* ── DIVIDER ── */
-    .rate-divider {
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--brown-light), transparent);
-      margin: 8px 0 52px;
-      opacity: 0.4;
-    }
-
-    /* ── BOOK NOW BANNER ── */
-    .book-now-banner {
-      background: var(--brown-deep);
-      padding: 56px 40px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .book-now-banner h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem;
-      font-weight: 300;
-      letter-spacing: 0.1em;
-      color: var(--cream);
-      margin-bottom: 8px;
-    }
-
-    .book-now-banner p {
-      font-size: 0.95rem;
-      color: var(--brown-light);
-      font-style: italic;
-      margin-bottom: 32px;
-    }
-
-    .btn-book {
-      display: inline-block;
-      background: var(--orange-warm);
-      color: var(--cream);
-      text-decoration: none;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      padding: 16px 48px;
-      border-radius: 50px;
-      transition: background 0.3s, transform 0.2s;
-    }
-
-    .btn-book:hover {
-      background: var(--brown-mid);
-      transform: translateY(-2px);
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      background: radial-gradient(ellipse at 15% 60%, #7a3e1a 0%, transparent 55%),
-                  radial-gradient(ellipse at 75% 30%, #5c3d2e 0%, transparent 50%),
-                  radial-gradient(ellipse at 45% 90%, #3b4a2f 0%, transparent 50%),
-                  radial-gradient(ellipse at 85% 80%, #8b5e3c 0%, transparent 45%),
-                  radial-gradient(ellipse at 5% 20%, #6b4423 0%, transparent 45%),
-                  #1e1a12;
-      padding: 36px 40px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .footer-motif {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.5;
-    }
-
-    footer p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      color: var(--brown-light);
-      position: relative;
-      z-index: 1;
-    }
-
-    footer a {
-      color: var(--orange-light);
-      text-decoration: none;
-      letter-spacing: 0.1em;
-    }
-
-    /* ── ANIMATION ── */
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 600px) {
-      .header-nav { padding: 10px 20px 18px; gap: 8px; }
-      .header-nav a { font-size: 0.85rem; letter-spacing: 0.08em; }
-      main { padding: 0 20px 60px; }
-      .page-title h1 { font-size: 1.8rem; }
-      tbody td { font-size: 0.95rem; padding: 12px 10px; }
-      tbody td:last-child { font-size: 1.1rem; }
+    /* DESKTOP */
+    @media (min-width:900px) {
+      .header-top { padding:28px 60px 16px; }
+      .logo-img { height:80px; max-width:220px; }
+      .header-nav { padding:10px 60px 20px; }
+      .header-nav a { font-size:1.05rem; letter-spacing:0.14em; }
+      .rate-category h2 { font-size:1.5rem; }
+      .book-now-banner h2 { font-size:1.8rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- ══════════════ HEADER ══════════════ -->
-<header>
-  <svg class="header-motif" viewBox="0 0 1440 140" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+<header role="banner">
+  <svg class="header-motif" viewBox="0 0 1440 140" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <defs>
       <filter id="hblur"><feGaussianBlur stdDeviation="8"/></filter>
       <filter id="hblur-soft"><feGaussianBlur stdDeviation="14"/></filter>
     </defs>
-    <!-- Blobs shifted slightly for page variation -->
     <ellipse cx="300" cy="80" rx="220" ry="80" fill="#c9713a" opacity="0.45" filter="url(#hblur)"/>
     <ellipse cx="750" cy="30" rx="260" ry="70" fill="#8a9e6a" opacity="0.35" filter="url(#hblur)"/>
     <ellipse cx="1100" cy="95" rx="240" ry="75" fill="#c49a6c" opacity="0.4" filter="url(#hblur)"/>
-    <ellipse cx="80"   cy="50" rx="160" ry="55" fill="#e8a96a" opacity="0.35" filter="url(#hblur)"/>
-    <ellipse cx="550"  cy="115" rx="160" ry="50" fill="#5a6e42" opacity="0.3" filter="url(#hblur)"/>
+    <ellipse cx="80" cy="50" rx="160" ry="55" fill="#e8a96a" opacity="0.35" filter="url(#hblur)"/>
+    <ellipse cx="550" cy="115" rx="160" ry="50" fill="#5a6e42" opacity="0.3" filter="url(#hblur)"/>
     <ellipse cx="1300" cy="25" rx="140" ry="45" fill="#8b5e3c" opacity="0.4" filter="url(#hblur)"/>
-    <ellipse cx="900"  cy="65" rx="200" ry="55" fill="#f0d9b5" opacity="0.2" filter="url(#hblur-soft)"/>
-    <ellipse cx="200"  cy="40" rx="160" ry="45" fill="#e8c98a" opacity="0.18" filter="url(#hblur-soft)"/>
+    <ellipse cx="900" cy="65" rx="200" ry="55" fill="#f0d9b5" opacity="0.2" filter="url(#hblur-soft)"/>
+    <ellipse cx="200" cy="40" rx="160" ry="45" fill="#e8c98a" opacity="0.18" filter="url(#hblur-soft)"/>
     <ellipse cx="1200" cy="80" rx="170" ry="50" fill="#d4b896" opacity="0.2" filter="url(#hblur-soft)"/>
     <path d="M0,75 C200,35 400,115 600,65 C800,15 1000,95 1200,55 C1320,30 1400,70 1440,50 L1440,140 L0,140 Z" fill="#c49a6c" opacity="0.2"/>
     <path d="M0,105 C250,65 500,135 750,95 C1000,55 1200,120 1440,85 L1440,140 L0,140 Z" fill="#e8a96a" opacity="0.15"/>
   </svg>
-
   <div class="header-top">
-    <div class="logo-box" style="border:2px dashed var(--orange-light);border-radius:12px;padding:8px 16px;">
-      <img src="logo.png" alt="Emily Stevens Bodywork" class="logo-img" onerror="this.parentElement.innerHTML='[ Logo ]';this.parentElement.style.color='var(--orange-light)';this.parentElement.style.fontFamily='Cormorant Garamond, serif';this.parentElement.style.fontSize='0.8rem';"/>
+    <div class="logo-wrap">
+      <img src="logo.png" alt="Calm Hippo" class="logo-img" width="180" height="72"/>
     </div>
   </div>
-
-  <nav class="header-nav">
+  <nav class="header-nav" aria-label="Main navigation">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="rates.html" class="active">Rates</a>
+    <a href="rates.html" class="active" aria-current="page">Rates</a>
     <a href="pics.html">Pics</a>
     <a href="book.html">Book Now</a>
   </nav>
 </header>
 
-<!-- ══════════════ PAGE TITLE ══════════════ -->
 <div class="page-title">
   <h1>Rates</h1>
-  <div class="section-rule"></div>
+  <div class="section-rule" aria-hidden="true"></div>
 </div>
 
-<!-- ══════════════ RATES CONTENT ══════════════ -->
-<main>
+<main aria-label="Service rates">
 
-  <!-- IN STUDIO -->
   <div class="rate-category">
     <h2>In-Studio Massage</h2>
     <p class="category-note">Petaluma &amp; Willits locations</p>
-    <table>
-      <thead>
-        <tr>
-          <th>Session</th>
-          <th style="text-align:right;">Rate</th>
-        </tr>
-      </thead>
+    <table aria-label="In-studio massage rates">
+      <thead><tr><th scope="col">Session</th><th scope="col" style="text-align:right;">Rate</th></tr></thead>
       <tbody>
-        <tr>
-          <td>60 Minutes</td>
-          <td>$100</td>
-        </tr>
-        <tr>
-          <td>75 Minutes</td>
-          <td>$120</td>
-        </tr>
-        <tr>
-          <td>90 Minutes</td>
-          <td>$140</td>
-        </tr>
+        <tr><td>60 Minutes</td><td>$100</td></tr>
+        <tr><td>75 Minutes</td><td>$120</td></tr>
+        <tr><td>90 Minutes</td><td>$140</td></tr>
       </tbody>
     </table>
   </div>
 
-  <div class="rate-divider"></div>
+  <div class="rate-divider" aria-hidden="true"></div>
 
-  <!-- IN HOME -->
   <div class="rate-category">
     <h2>In-Home Massage</h2>
     <p class="category-note">Emily comes to you</p>
-    <table>
-      <thead>
-        <tr>
-          <th>Session</th>
-          <th style="text-align:right;">Rate</th>
-        </tr>
-      </thead>
+    <table aria-label="In-home massage rates">
+      <thead><tr><th scope="col">Session</th><th scope="col" style="text-align:right;">Rate</th></tr></thead>
       <tbody>
-        <tr>
-          <td>60 Minutes</td>
-          <td>$120 – $140</td>
-        </tr>
-        <tr>
-          <td>75 Minutes</td>
-          <td>$140 – $160</td>
-        </tr>
-        <tr>
-          <td>90 Minutes</td>
-          <td>$160 – $180</td>
-        </tr>
+        <tr><td>60 Minutes</td><td>$120 – $140</td></tr>
+        <tr><td>75 Minutes</td><td>$140 – $160</td></tr>
+        <tr><td>90 Minutes</td><td>$160 – $180</td></tr>
       </tbody>
     </table>
     <p class="rate-note">Rate varies based on location and travel distance.</p>
   </div>
 
-  <div class="rate-divider"></div>
+  <div class="rate-divider" aria-hidden="true"></div>
 
-  <!-- EVENTS & CHAIR -->
   <div class="rate-category">
     <h2>Private Parties &amp; Corporate Events</h2>
     <p class="category-note">Chair massage available for events</p>
-    <table>
-      <thead>
-        <tr>
-          <th>Service</th>
-          <th style="text-align:right;">Rate</th>
-        </tr>
-      </thead>
+    <table aria-label="Event massage rates">
+      <thead><tr><th scope="col">Service</th><th scope="col" style="text-align:right;">Rate</th></tr></thead>
       <tbody>
-        <tr>
-          <td>Chair Massage</td>
-          <td>$85 / hr</td>
-        </tr>
+        <tr><td>Chair Massage</td><td>$85 / hr</td></tr>
       </tbody>
     </table>
     <p class="rate-note">Available for private gatherings, corporate wellness events, and team appreciation days. Contact Emily to discuss your event.</p>
   </div>
 
-  <div class="rate-divider"></div>
+  <div class="rate-divider" aria-hidden="true"></div>
 
-  <!-- SOUND HEALING -->
   <div class="rate-category">
     <h2>Sound Healing</h2>
     <p class="category-note">Private &amp; group sessions</p>
-    <table>
-      <thead>
-        <tr>
-          <th>Session Type</th>
-          <th style="text-align:right;">Rate</th>
-        </tr>
-      </thead>
+    <table aria-label="Sound healing rates">
+      <thead><tr><th scope="col">Session Type</th><th scope="col" style="text-align:right;">Rate</th></tr></thead>
       <tbody>
-        <tr>
-          <td>Private Session</td>
-          <td>$88</td>
-        </tr>
-        <tr>
-          <td>Couples Session</td>
-          <td>$111</td>
-        </tr>
-        <tr>
-          <td>Group Session</td>
-          <td>By arrangement</td>
-        </tr>
+        <tr><td>Private Session</td><td>$88</td></tr>
+        <tr><td>Couples Session</td><td>$111</td></tr>
+        <tr><td>Group Session</td><td>By arrangement</td></tr>
       </tbody>
     </table>
     <p class="rate-note">Group rates are designed per event. Please reach out to discuss size, duration, and location.</p>
@@ -514,25 +235,21 @@
 
 </main>
 
-<!-- ══════════════ BOOK NOW BANNER ══════════════ -->
-<section class="book-now-banner">
-  <h2>Ready to book your session?</h2>
+<section class="book-now-banner" aria-labelledby="book-heading">
+  <h2 id="book-heading">Ready to book your session?</h2>
   <p>In-studio, in-home, or a private event — Emily is here for you</p>
-  <a href="https://formspree.io/f/YOUR_FORM_ID" class="btn-book">Book Now</a>
+  <a href="https://formspree.io/f/YOUR_FORM_ID" class="btn-book" aria-label="Book a session with Emily Stevens">Book Now</a>
 </section>
 
-<!-- ══════════════ FOOTER ══════════════ -->
-<footer>
-  <svg class="footer-motif" viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <filter id="fblur"><feGaussianBlur stdDeviation="7"/></filter>
-    </defs>
+<footer role="contentinfo">
+  <svg class="footer-motif" viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs><filter id="fblur"><feGaussianBlur stdDeviation="7"/></filter></defs>
     <ellipse cx="150" cy="45" rx="200" ry="55" fill="#c9713a" opacity="0.45" filter="url(#fblur)"/>
     <ellipse cx="550" cy="25" rx="220" ry="50" fill="#8a9e6a" opacity="0.35" filter="url(#fblur)"/>
-    <ellipse cx="950" cy="65" rx="210" ry="55" fill="#e8a96a" opacity="0.4"  filter="url(#fblur)"/>
+    <ellipse cx="950" cy="65" rx="210" ry="55" fill="#e8a96a" opacity="0.4" filter="url(#fblur)"/>
     <ellipse cx="1300" cy="30" rx="180" ry="50" fill="#8b5e3c" opacity="0.4" filter="url(#fblur)"/>
     <path d="M0,35 C240,65 480,15 720,40 C960,65 1200,20 1440,38 L1440,90 L0,90 Z" fill="#c49a6c" opacity="0.2"/>
     <path d="M0,58 C300,30 600,75 900,50 C1200,25 1380,60 1440,48 L1440,90 L0,90 Z" fill="#e8a96a" opacity="0.15"/>
   </svg>
-  <p style="margin-bottom:10px;">&copy; 2026 Emily Stevens Bodywork &nbsp;·&nbsp; Petaluma &amp; Willits, California</p>
-  <p><a href="tel:7073641202">707.364.1202</a> &nbsp;·&nbsp; <a href="/cdn-cgi/l/email-protection#8feae2fce6ece3eacffcedece8e3e0edeee3a1e1eafb"><span class="
+  <p style="margin-bottom:8px;">&copy; 2026 Calm Hippo &nbsp;&middot;&nbsp; Petaluma &amp; Willits, California</p>
+  <p><a href="tel:7073641202">707.364.1202</a> &nbsp;&middot;&nbsp; <a href="/cdn-cgi/l/email-protection#c2a7afb1aba1aea782b1a0a1a5aeada0a3aeecaca7b6"><span class="
