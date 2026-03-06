@@ -87,19 +87,11 @@
       padding: 28px 40px 16px;
     }
 
-    .logo-box {
-      width: 180px;
+    .logo-img {
       height: 80px;
-      border: 2px dashed var(--orange-light);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--orange-light);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.8rem;
-      letter-spacing: 0.08em;
-      opacity: 0.85;
+      width: auto;
+      max-width: 220px;
+      object-fit: contain;
     }
 
     .header-nav {
@@ -384,11 +376,14 @@
   </svg>
 
   <div class="header-top">
-    <div class="logo-box">[ Logo ]</div>
+    <div class="logo-box" style="border:2px dashed var(--orange-light);border-radius:12px;padding:8px 16px;">
+      <img src="logo.png" alt="Emily Stevens Bodywork" class="logo-img" onerror="this.parentElement.innerHTML='[ Logo ]';this.parentElement.style.color='var(--orange-light)';this.parentElement.style.fontFamily='Cormorant Garamond, serif';this.parentElement.style.fontSize='0.8rem';"/>
+    </div>
   </div>
 
   <nav class="header-nav">
     <a href="index.html">Home</a>
+    <a href="about.html">About</a>
     <a href="rates.html" class="active">Rates</a>
     <a href="pics.html">Pics</a>
     <a href="book.html">Book Now</a>
