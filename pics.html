@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pics — Emily Stevens Bodywork</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --green-deep:   #3b4a2f;
+      --green-mid:    #5a6e42;
+      --green-light:  #8a9e6a;
+      --brown-deep:   #5c3d2e;
+      --brown-mid:    #8b5e3c;
+      --brown-light:  #c49a6c;
+      --orange-warm:  #c9713a;
+      --orange-light: #e8a96a;
+      --cream:        #f7f2eb;
+      --cream-dark:   #ede4d6;
+      --text-dark:    #2e2318;
+      --text-mid:     #5a4535;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background:
+        radial-gradient(ellipse at 80% 10%, rgba(92,61,46,0.16) 0%, transparent 45%),
+        radial-gradient(ellipse at 0% 60%, rgba(59,74,47,0.14) 0%, transparent 40%),
+        radial-gradient(ellipse at 100% 80%, rgba(139,94,60,0.13) 0%, transparent 40%),
+        radial-gradient(ellipse at 20% 100%, rgba(201,113,58,0.11) 0%, transparent 45%),
+        var(--cream);
+      color: var(--text-dark);
+      font-family: 'Lora', serif;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Buddha — bottom right this time */
+    body::before {
+      content: '';
+      position: fixed;
+      bottom: -5%;
+      right: -5%;
+      width: 65%;
+      height: 100%;
+      background-image: url('buddha.png');
+      background-size: cover;
+      background-position: center;
+      filter: blur(7px) saturate(0.6) opacity(0.11);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    header, footer, section, nav, main {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: radial-gradient(ellipse at 20% 50%, #5c3d2e 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 30%, #3b2a1a 0%, transparent 55%),
+                  radial-gradient(ellipse at 55% 80%, #6b4423 0%, transparent 50%),
+                  radial-gradient(ellipse at 10% 10%, #2e3d22 0%, transparent 50%),
+                  radial-gradient(ellipse at 90% 90%, #7a3e1a 0%, transparent 45%),
+                  radial-gradient(ellipse at 50% 20%, rgba(232,200,160,0.22) 0%, transparent 45%),
+                  radial-gradient(ellipse at 35% 70%, rgba(247,230,200,0.15) 0%, transparent 40%),
+                  radial-gradient(ellipse at 70% 55%, rgba(138,158,106,0.18) 0%, transparent 40%),
+                  #1e1a12;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-motif {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.55;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 28px 40px 16px;
+    }
+
+    .logo-img {
+      height: 80px;
+      width: auto;
+      max-width: 220px;
+      object-fit: contain;
+    }
+
+    .header-nav {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 10px 60px 20px;
+      border-top: 1px solid rgba(232,169,106,0.3);
+    }
+
+    .header-nav a {
+      color: var(--cream);
+      text-decoration: none;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 300;
+      transition: color 0.3s;
+      position: relative;
+    }
+
+    .header-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0; right: 0;
+      height: 1px;
+      background: var(--orange-light);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+
+    .header-nav a:hover { color: var(--orange-light); }
+    .header-nav a:hover::after { transform: scaleX(1); }
+    .header-nav a.active { color: var(--orange-light); }
+    .header-nav a.active::after { transform: scaleX(1); }
+
+    /* ── PAGE TITLE ── */
+    .page-title {
+      text-align: center;
+      padding: 56px 40px 48px;
+    }
+
+    .page-title h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--brown-deep);
+      margin-bottom: 12px;
+    }
+
+    .section-rule {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--orange-warm), var(--brown-light));
+      margin: 0 auto;
+      border-radius: 2px;
+    }
+
+    /* ── MASONRY GRID ── */
+    main {
+      padding: 0 40px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .masonry-grid {
+      columns: 2;
+      column-gap: 20px;
+    }
+
+    @media (min-width: 900px) {
+      .masonry-grid { columns: 3; }
+    }
+
+    /* ── GALLERY ITEM ── */
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 20px;
+      overflow: hidden;
+      border-radius: 10px;
+      cursor: pointer;
+      position: relative;
+      box-shadow: 0 4px 20px rgba(92,61,46,0.15);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+      transition: transform 0.45s ease, filter 0.45s ease;
+      transform-origin: center center;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.07);
+      filter: brightness(1.05) saturate(1.1);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(92,61,46,0.45) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      border-radius: 10px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 18px;
+    }
+
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+    .gallery-overlay span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cream);
+      opacity: 0.9;
+    }
+
+    /* ── LIGHTBOX ── */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(30, 22, 14, 0.93);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      cursor: zoom-out;
+    }
+
+    .lightbox.open { display: flex; }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 88vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 20px 80px rgba(0,0,0,0.6);
+      cursor: default;
+      animation: lbFadeIn 0.3s ease;
+    }
+
+    @keyframes lbFadeIn {
+      from { opacity: 0; transform: scale(0.96); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 24px;
+      right: 32px;
+      color: var(--orange-light);
+      font-size: 2rem;
+      cursor: pointer;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      line-height: 1;
+      transition: color 0.2s;
+      z-index: 1001;
+    }
+
+    .lightbox-close:hover { color: var(--cream); }
+
+    .lightbox-prev,
+    .lightbox-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(196,154,108,0.2);
+      border: 1px solid rgba(196,154,108,0.4);
+      color: var(--orange-light);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 300;
+      padding: 12px 18px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background 0.2s, color 0.2s;
+      z-index: 1001;
+    }
+
+    .lightbox-prev { left: 24px; }
+    .lightbox-next { right: 24px; }
+    .lightbox-prev:hover,
+    .lightbox-next:hover {
+      background: rgba(196,154,108,0.4);
+      color: var(--cream);
+    }
+
+    /* ── BOOK NOW BANNER ── */
+    .book-now-banner {
+      background: var(--brown-deep);
+      padding: 56px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .book-now-banner h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+
+    .book-now-banner p {
+      font-size: 0.95rem;
+      color: var(--brown-light);
+      font-style: italic;
+      margin-bottom: 32px;
+    }
+
+    .btn-book {
+      display: inline-block;
+      background: var(--orange-warm);
+      color: var(--cream);
+      text-decoration: none;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 16px 48px;
+      border-radius: 50px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .btn-book:hover {
+      background: var(--brown-mid);
+      transform: translateY(-2px);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: radial-gradient(ellipse at 15% 60%, #7a3e1a 0%, transparent 55%),
+                  radial-gradient(ellipse at 75% 30%, #5c3d2e 0%, transparent 50%),
+                  radial-gradient(ellipse at 45% 90%, #3b4a2f 0%, transparent 50%),
+                  radial-gradient(ellipse at 85% 80%, #8b5e3c 0%, transparent 45%),
+                  radial-gradient(ellipse at 5% 20%, #6b4423 0%, transparent 45%),
+                  #1e1a12;
+      padding: 36px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer-motif {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    footer p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      color: var(--brown-light);
+      position: relative;
+      z-index: 1;
+    }
+
+    footer a {
+      color: var(--orange-light);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .header-nav { padding: 10px 20px 18px; gap: 8px; }
+      .header-nav a { font-size: 0.8rem; letter-spacing: 0.06em; }
+      main { padding: 0 16px 60px; }
+      .masonry-grid { columns: 1; }
+      .page-title h1 { font-size: 1.8rem; }
+      .lightbox-prev, .lightbox-next { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════ HEADER ══════════════ -->
+<header>
+  <svg class="header-motif" viewBox="0 0 1440 140" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="hblur"><feGaussianBlur stdDeviation="8"/></filter>
+      <filter id="hblur-soft"><feGaussianBlur stdDeviation="14"/></filter>
+    </defs>
+    <ellipse cx="250"  cy="50" rx="210" ry="78" fill="#c9713a" opacity="0.45" filter="url(#hblur)"/>
+    <ellipse cx="700"  cy="20" rx="255" ry="68" fill="#8a9e6a" opacity="0.35" filter="url(#hblur)"/>
+    <ellipse cx="1050" cy="95" rx="235" ry="72" fill="#c49a6c" opacity="0.4"  filter="url(#hblur)"/>
+    <ellipse cx="1380" cy="55" rx="185" ry="62" fill="#e8a96a" opacity="0.35" filter="url(#hblur)"/>
+    <ellipse cx="480"  cy="118" rx="165" ry="48" fill="#5a6e42" opacity="0.3" filter="url(#hblur)"/>
+    <ellipse cx="900"  cy="18" rx="138" ry="43" fill="#8b5e3c" opacity="0.4"  filter="url(#hblur)"/>
+    <ellipse cx="550"  cy="62" rx="195" ry="53" fill="#f0d9b5" opacity="0.2"  filter="url(#hblur-soft)"/>
+    <ellipse cx="150"  cy="38" rx="158" ry="44" fill="#e8c98a" opacity="0.18" filter="url(#hblur-soft)"/>
+    <ellipse cx="1200" cy="75" rx="168" ry="49" fill="#d4b896" opacity="0.2"  filter="url(#hblur-soft)"/>
+    <path d="M0,78 C170,38 370,118 570,74 C770,30 970,106 1170,64 C1310,34 1410,74 1440,57 L1440,140 L0,140 Z" fill="#c49a6c" opacity="0.2"/>
+    <path d="M0,102 C230,62 470,132 710,96 C950,60 1170,122 1400,88 L1440,82 L1440,140 L0,140 Z" fill="#e8a96a" opacity="0.15"/>
+  </svg>
+
+  <div class="header-top">
+    <div class="logo-box" style="border:2px dashed var(--orange-light);border-radius:12px;padding:8px 16px;">
+      <img src="logo.png" alt="Emily Stevens Bodywork" class="logo-img"
+           onerror="this.parentElement.innerHTML='[ Logo ]';this.parentElement.style.color='var(--orange-light)';this.parentElement.style.fontFamily='Cormorant Garamond, serif';this.parentElement.style.fontSize='0.8rem';"/>
+    </div>
+  </div>
+
+  <nav class="header-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="rates.html">Rates</a>
+    <a href="pics.html" class="active">Pics</a>
+    <a href="book.html">Book Now</a>
+  </nav>
+</header>
+
+<!-- ══════════════ PAGE TITLE ══════════════ -->
+<div class="page-title">
+  <h1>Gallery</h1>
+  <div class="section-rule"></div>
+</div>
+
+<!-- ══════════════ MASONRY GALLERY ══════════════ -->
+<main>
+  <div class="masonry-grid" id="gallery">
+
+    <div class="gallery-item" onclick="openLightbox(0)">
+      <img src="pic1.png" alt="Gallery image 1"/>
+      <div class="gallery-overlay"><span>View</span></div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(1)">
+      <img src="pic2.png" alt="Gallery image 2"/>
+      <div class="gallery-overlay"><span>View</span></div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(2)">
+      <img src="pic3.png" alt="Gallery image 3"/>
+      <div class="gallery-overlay"><span>View</span></div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(3)">
+      <img src="pic4.png" alt="Gallery image 4"/>
+      <div class="gallery-overlay"><span>View</span></div>
+    </div>
+
+  </div>
+</main>
+
+<!-- ══════════════ LIGHTBOX ══════════════ -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+  <span class="lightbox-prev" onclick="event.stopPropagation(); changeImage(-1)">&#8249;</span>
+  <img id="lightbox-img" src="" alt="Full size view"/>
+  <span class="lightbox-next" onclick="event.stopPropagation(); changeImage(1)">&#8250;</span>
+</div>
+
+<!-- ══════════════ BOOK NOW BANNER ══════════════ -->
+<section class="book-now-banner">
+  <h2>Like what you see?</h2>
+  <p>Book a session with Emily in Petaluma or Willits</p>
+  <a href="https://formspree.io/f/YOUR_FORM_ID" class="btn-book">Book Now</a>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+  <svg class="footer-motif" viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="fblur"><feGaussianBlur stdDeviation="7"/></filter>
+    </defs>
+    <ellipse cx="150"  cy="45" rx="200" ry="55" fill="#c9713a" opacity="0.45" filter="url(#fblur)"/>
+    <ellipse cx="550"  cy="25" rx="220" ry="50" fill="#8a9e6a" opacity="0.35" filter="url(#fblur)"/>
+    <ellipse cx="950"  cy="65" rx="210" ry="55" fill="#e8a96a" opacity="0.4"  filter="url(#fblur)"/>
+    <ellipse cx="1300" cy="30" rx="180" ry="50" fill="#8b5e3c" opacity="0.4"  filter="url(#fblur)"/>
+    <path d="M0,35 C240,65 480,15 720,40 C960,65 1200,20 1440,38 L1440,90 L0,90 Z" fill="#c49a6c" opacity="0.2"/>
+    <path d="M0,58 C300,30 600,75 900,50 C1200,25 1380,60 1440,48 L1440,90 L0,90 Z" fill="#e8a96a" opacity="0.15"/>
+  </svg>
+  <p style="margin-bottom:10px;">&copy; 2026 Emily Stevens Bodywork &nbsp;·&nbsp; Petaluma &amp; Willits, California</p>
+  <p><a href="tel:7073641202">707.364.1202</a> &nbsp;·&nbsp; <a href="mailto:emsicle@sbcglobal.net">emsicle@sbcglobal.net</a></p>
+</footer>
+
+<!-- ══════════════ LIGHTBOX SCRIPT ══════════════ -->
+<script>
+  const images = ['pic1.png','pic2.png','pic3.png','pic4.png'];
+  let current = 0;
+
+  function openLightbox(index) {
+    current = index;
+    document.getElementById('lightbox-img').src = images[current];
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(e) {
+    if (!e || e.target === document.getElementById('lightbox') || e.target.classList.contains('lightbox-close')) {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+
+  function changeImage(dir) {
+    current = (current + dir + images.length) % images.length;
+    document.getElementById('lightbox-img').src = images[current];
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (document.getElementById('lightbox').classList.contains('open')) {
+      if (e.key === 'ArrowRight') changeImage(1);
+      if (e.key === 'ArrowLeft')  changeImage(-1);
+      if (e.key === 'Escape')     closeLightbox({target: document.getElementById('lightbox')});
+    }
+  });
+</script>
+
+</body>
+</html>
