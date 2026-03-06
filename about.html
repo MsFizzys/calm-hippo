@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About — Emily Stevens Bodywork</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --green-deep:   #3b4a2f;
+      --green-mid:    #5a6e42;
+      --green-light:  #8a9e6a;
+      --brown-deep:   #5c3d2e;
+      --brown-mid:    #8b5e3c;
+      --brown-light:  #c49a6c;
+      --orange-warm:  #c9713a;
+      --orange-light: #e8a96a;
+      --cream:        #f7f2eb;
+      --cream-dark:   #ede4d6;
+      --text-dark:    #2e2318;
+      --text-mid:     #5a4535;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background:
+        radial-gradient(ellipse at 60% 0%, rgba(92,61,46,0.16) 0%, transparent 45%),
+        radial-gradient(ellipse at 0% 50%, rgba(59,74,47,0.14) 0%, transparent 40%),
+        radial-gradient(ellipse at 100% 70%, rgba(139,94,60,0.13) 0%, transparent 40%),
+        radial-gradient(ellipse at 30% 100%, rgba(201,113,58,0.11) 0%, transparent 45%),
+        var(--cream);
+      color: var(--text-dark);
+      font-family: 'Lora', serif;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Buddha — centered, slightly right, this page's variation */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0%;
+      right: 10%;
+      width: 65%;
+      height: 100%;
+      background-image: url('https://images.unsplash.com/photo-1634128221889-82ed6efebfc3?w=1200&q=80');
+      background-size: cover;
+      background-position: center top;
+      filter: blur(7px) saturate(0.6) opacity(0.11);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    header, footer, section, nav, main {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: radial-gradient(ellipse at 20% 50%, #5c3d2e 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 30%, #3b2a1a 0%, transparent 55%),
+                  radial-gradient(ellipse at 55% 80%, #6b4423 0%, transparent 50%),
+                  radial-gradient(ellipse at 10% 10%, #2e3d22 0%, transparent 50%),
+                  radial-gradient(ellipse at 90% 90%, #7a3e1a 0%, transparent 45%),
+                  radial-gradient(ellipse at 50% 20%, rgba(232,200,160,0.22) 0%, transparent 45%),
+                  radial-gradient(ellipse at 35% 70%, rgba(247,230,200,0.15) 0%, transparent 40%),
+                  radial-gradient(ellipse at 70% 55%, rgba(138,158,106,0.18) 0%, transparent 40%),
+                  #1e1a12;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-motif {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.55;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 28px 40px 16px;
+    }
+
+    .logo-img {
+      height: 80px;
+      width: auto;
+      max-width: 220px;
+      object-fit: contain;
+    }
+
+    .header-nav {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 10px 60px 20px;
+      border-top: 1px solid rgba(232,169,106,0.3);
+    }
+
+    .header-nav a {
+      color: var(--cream);
+      text-decoration: none;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 300;
+      transition: color 0.3s;
+      position: relative;
+    }
+
+    .header-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0; right: 0;
+      height: 1px;
+      background: var(--orange-light);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+
+    .header-nav a:hover { color: var(--orange-light); }
+    .header-nav a:hover::after { transform: scaleX(1); }
+    .header-nav a.active { color: var(--orange-light); }
+    .header-nav a.active::after { transform: scaleX(1); }
+
+    /* ── PAGE TITLE ── */
+    .page-title {
+      text-align: center;
+      padding: 56px 40px 48px;
+    }
+
+    .page-title h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--brown-deep);
+      margin-bottom: 12px;
+    }
+
+    .section-rule {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--orange-warm), var(--brown-light));
+      margin: 0 auto;
+      border-radius: 2px;
+    }
+
+    /* ── ABOUT LAYOUT ── */
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 40px 80px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    /* ── PHOTO ── */
+    .about-photo-col {
+      position: sticky;
+      top: 40px;
+    }
+
+    .emily-photo {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 8px 40px rgba(92,61,46,0.2);
+      display: block;
+    }
+
+    .photo-placeholder {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      border: 2px dashed var(--brown-light);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: var(--brown-light);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      font-style: italic;
+      background: rgba(247,242,235,0.6);
+    }
+
+    .photo-caption {
+      margin-top: 14px;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--brown-mid);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── BIO TEXT ── */
+    .about-text-col p {
+      font-size: 1.1rem;
+      line-height: 2;
+      color: var(--text-mid);
+      margin-bottom: 1.8em;
+      font-style: italic;
+    }
+
+    .about-text-col p:last-child { margin-bottom: 0; }
+
+    /* ── CREDENTIALS STRIP ── */
+    .credentials-section {
+      background: rgba(237,228,214,0.55);
+      padding: 52px 40px;
+      margin-top: 0;
+    }
+
+    .credentials-section h2 {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--green-deep);
+      margin-bottom: 32px;
+    }
+
+    .credentials-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .credential-pill {
+      background: rgba(247,242,235,0.92);
+      border: 1px solid var(--brown-light);
+      border-radius: 50px;
+      padding: 10px 24px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--brown-deep);
+      letter-spacing: 0.05em;
+      box-shadow: 0 2px 10px rgba(92,61,46,0.08);
+    }
+
+    /* ── BOOK NOW BANNER ── */
+    .book-now-banner {
+      background: var(--brown-deep);
+      padding: 56px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .book-now-banner h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+
+    .book-now-banner p {
+      font-size: 0.95rem;
+      color: var(--brown-light);
+      font-style: italic;
+      margin-bottom: 32px;
+    }
+
+    .btn-book {
+      display: inline-block;
+      background: var(--orange-warm);
+      color: var(--cream);
+      text-decoration: none;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 16px 48px;
+      border-radius: 50px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .btn-book:hover {
+      background: var(--brown-mid);
+      transform: translateY(-2px);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: radial-gradient(ellipse at 15% 60%, #7a3e1a 0%, transparent 55%),
+                  radial-gradient(ellipse at 75% 30%, #5c3d2e 0%, transparent 50%),
+                  radial-gradient(ellipse at 45% 90%, #3b4a2f 0%, transparent 50%),
+                  radial-gradient(ellipse at 85% 80%, #8b5e3c 0%, transparent 45%),
+                  radial-gradient(ellipse at 5% 20%, #6b4423 0%, transparent 45%),
+                  #1e1a12;
+      padding: 36px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer-motif {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    footer p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      color: var(--brown-light);
+      position: relative;
+      z-index: 1;
+    }
+
+    footer a {
+      color: var(--orange-light);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+    }
+
+    /* ── FADE IN ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.9s ease forwards;
+    }
+    .fade-up:nth-child(1) { animation-delay: 0.1s; }
+    .fade-up:nth-child(2) { animation-delay: 0.3s; }
+    .fade-up:nth-child(3) { animation-delay: 0.5s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .about-photo-col { position: static; }
+      .emily-photo, .photo-placeholder { aspect-ratio: 1 / 1; }
+    }
+
+    @media (max-width: 600px) {
+      .header-nav { padding: 10px 20px 18px; gap: 8px; }
+      .header-nav a { font-size: 0.8rem; letter-spacing: 0.06em; }
+      main { padding: 0 20px 60px; }
+      .page-title h1 { font-size: 1.8rem; }
+      .about-text-col p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════ HEADER ══════════════ -->
+<header>
+  <svg class="header-motif" viewBox="0 0 1440 140" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="hblur"><feGaussianBlur stdDeviation="8"/></filter>
+      <filter id="hblur-soft"><feGaussianBlur stdDeviation="14"/></filter>
+    </defs>
+    <!-- Blobs in yet another arrangement for page variation -->
+    <ellipse cx="100"  cy="60" rx="200" ry="75" fill="#c9713a" opacity="0.45" filter="url(#hblur)"/>
+    <ellipse cx="480"  cy="25" rx="250" ry="65" fill="#8a9e6a" opacity="0.35" filter="url(#hblur)"/>
+    <ellipse cx="860"  cy="100" rx="230" ry="70" fill="#c49a6c" opacity="0.4" filter="url(#hblur)"/>
+    <ellipse cx="1200" cy="45" rx="200" ry="65" fill="#e8a96a" opacity="0.35" filter="url(#hblur)"/>
+    <ellipse cx="650"  cy="120" rx="170" ry="48" fill="#5a6e42" opacity="0.3" filter="url(#hblur)"/>
+    <ellipse cx="1400" cy="80" rx="130" ry="42" fill="#8b5e3c" opacity="0.4" filter="url(#hblur)"/>
+    <ellipse cx="600"  cy="55" rx="190" ry="52" fill="#f0d9b5" opacity="0.2" filter="url(#hblur-soft)"/>
+    <ellipse cx="250"  cy="35" rx="155" ry="42" fill="#e8c98a" opacity="0.18" filter="url(#hblur-soft)"/>
+    <ellipse cx="1050" cy="70" rx="165" ry="48" fill="#d4b896" opacity="0.2" filter="url(#hblur-soft)"/>
+    <path d="M0,70 C160,30 380,120 580,72 C780,24 980,108 1180,62 C1320,30 1410,72 1440,55 L1440,140 L0,140 Z" fill="#c49a6c" opacity="0.2"/>
+    <path d="M0,98 C220,58 460,128 700,92 C940,56 1160,118 1380,84 L1440,78 L1440,140 L0,140 Z" fill="#e8a96a" opacity="0.15"/>
+  </svg>
+
+  <div class="header-top">
+    <div class="logo-box" style="border:2px dashed var(--orange-light);border-radius:12px;padding:8px 16px;">
+      <img src="logo.png" alt="Emily Stevens Bodywork" class="logo-img"
+           onerror="this.parentElement.innerHTML='[ Logo ]';this.parentElement.style.color='var(--orange-light)';this.parentElement.style.fontFamily='Cormorant Garamond, serif';this.parentElement.style.fontSize='0.8rem';"/>
+    </div>
+  </div>
+
+  <nav class="header-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="rates.html">Rates</a>
+    <a href="pics.html">Pics</a>
+    <a href="book.html">Book Now</a>
+  </nav>
+</header>
+
+<!-- ══════════════ PAGE TITLE ══════════════ -->
+<div class="page-title">
+  <h1>About Emily</h1>
+  <div class="section-rule"></div>
+</div>
+
+<!-- ══════════════ ABOUT CONTENT ══════════════ -->
+<main>
+  <div class="about-grid">
+
+    <!-- PHOTO COLUMN -->
+    <div class="about-photo-col">
+      <img src="emily.png" alt="Emily Stevens" class="emily-photo"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+      <div class="photo-placeholder" style="display:none;">
+        <span>[ emily.png ]</span>
+        <span>Drop your photo here</span>
+      </div>
+      <p class="photo-caption">Emily Indiana Stevens<br>Certified Massage Therapist</p>
+    </div>
+
+    <!-- TEXT COLUMN -->
+    <div class="about-text-col">
+      <p class="fade-up">
+        My name is Emily Indiana Stevens, and my devotion to bodywork is profound. I am a Certified Massage Therapist, Ayurvedic Practitioner, Yoga Teacher, and IHSS Care Provider with comprehensive experience in home, spa, and clinical settings. As a child, I was a gymnast and dancer with a predisposition for intuitive touch, so I knew from an early age that bodywork was my fate.
+      </p>
+
+      <p class="fade-up">
+        My professional journey began in 2004 as a senior in high school when I asked my parents for a loan to become certified in massage therapy. Fast forward twenty-one years, and I have a thriving practice across four Northern California counties with niche expertise in spinal cord injuries, brain trauma, prenatal, post-partum, and end-of-life care.
+      </p>
+
+      <p class="fade-up">
+        I specialize in working with clients that have lifelong injuries and mobility issues because fourteen years ago my little brother was paralyzed. He passed away a year after his accident as a result of the many complications that followed. When he died, I shifted gears and started focusing my skills and energy into working with people with disabilities — because I had witnessed firsthand the suffering of someone incapable of moving their own body.
+      </p>
+
+      <p class="fade-up">
+        I travel long distances weekly in order to reach people in the comfort of their own spaces, many of whom are unlikely to experience bodywork otherwise. I assist them out of wheelchairs and onto massage tables. I meet them on their hospital beds or carry them down to the Earth. No matter which individualized treatment plan I implement, my role is to help them release their tense, day-to-day holding patterns so they may know their bodies without so much pain.
+      </p>
+
+      <p class="fade-up">
+        I have several long-standing clients; some have become like family. My profession isn't just my job — because my purpose lies in healing every<strong>BODY</strong>.
+      </p>
+    </div>
+
+  </div>
+</main>
+
+<!-- ══════════════ CREDENTIALS ══════════════ -->
+<section class="credentials-section">
+  <h2>Credentials &amp; Training</h2>
+  <div class="credentials-grid">
+    <span class="credential-pill">Certified Massage Therapist</span>
+    <span class="credential-pill">Ayurvedic Practitioner</span>
+    <span class="credential-pill">Yoga Teacher</span>
+    <span class="credential-pill">IHSS Care Provider</span>
+    <span class="credential-pill">Spinal Cord Injury Specialist</span>
+    <span class="credential-pill">Brain Trauma Care</span>
+    <span class="credential-pill">Prenatal &amp; Post-Partum</span>
+    <span class="credential-pill">End-of-Life Care</span>
+    <span class="credential-pill">22 Years in Practice</span>
+  </div>
+</section>
+
+<!-- ══════════════ BOOK NOW BANNER ══════════════ -->
+<section class="book-now-banner">
+  <h2>Ready to experience Emily's touch?</h2>
+  <p>Sessions available in Petaluma, Willits, and beyond</p>
+  <a href="https://formspree.io/f/YOUR_FORM_ID" class="btn-book">Book Now</a>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+  <svg class="footer-motif" viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="fblur"><feGaussianBlur stdDeviation="7"/></filter>
+    </defs>
+    <ellipse cx="150"  cy="45" rx="200" ry="55" fill="#c9713a" opacity="0.45" filter="url(#fblur)"/>
+    <ellipse cx="550"  cy="25" rx="220" ry="50" fill="#8a9e6a" opacity="0.35" filter="url(#fblur)"/>
+    <ellipse cx="950"  cy="65" rx="210" ry="55" fill="#e8a96a" opacity="0.4"  filter="url(#fblur)"/>
+    <ellipse cx="1300" cy="30" rx="180" ry="50" fill="#8b5e3c" opacity="0.4"  filter="url(#fblur)"/>
+    <path d="M0,35 C240,65 480,15 720,40 C960,65 1200,20 1440,38 L1440,90 L0,90 Z" fill="#c49a6c" opacity="0.2"/>
+    <path d="M0,58 C300,30 600,75 900,50 C1200,25 1380,60 1440,48 L1440,90 L0,90 Z" fill="#e8a96a" opacity="0.15"/>
+  </svg>
+  <p style="margin-bottom:10px;">&copy; 2026 Emily Stevens Bodywork &nbsp;·&nbsp; Petaluma &amp; Willits, California</p>
+  <p><a href="tel:7073641202">707.364.1202</a> &nbsp;·&nbsp; <a href="mailto:emsicle@sbcglobal.net">emsicle@sbcglobal.net</a></p>
+</footer>
+
+</body>
+</html>
