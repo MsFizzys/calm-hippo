@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Book a massage therapy, sound healing, or meditation session with Calm Hippo in Petaluma or Willits, California. In-studio and in-home sessions available."/>
+  <meta name="keywords" content="book massage Petaluma, book massage Willits, schedule sound healing, in-home massage appointment Northern California"/>
+  <meta property="og:title" content="Book Now — Calm Hippo"/>
+  <meta property="og:description" content="Schedule your massage, sound healing, or meditation session with Emily Stevens in Petaluma or Willits, CA."/>
+  <meta property="og:type" content="website"/>
+  <meta name="theme-color" content="#1e1a12"/>
+  <title>Book Now — Calm Hippo | Petaluma & Willits, CA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --green-deep:  #3b4a2f;
+      --brown-deep:  #5c3d2e;
+      --brown-mid:   #8b5e3c;
+      --brown-light: #c49a6c;
+      --orange-warm: #c9713a;
+      --orange-light:#e8a96a;
+      --cream:       #f7f2eb;
+      --cream-dark:  #ede4d6;
+      --text-dark:   #2e2318;
+      --text-mid:    #5a4535;
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    img { max-width:100%; display:block; }
+
+    body {
+      background:
+        radial-gradient(ellipse at 20% 0%, rgba(92,61,46,0.16) 0%, transparent 45%),
+        radial-gradient(ellipse at 100% 30%, rgba(59,74,47,0.14) 0%, transparent 40%),
+        radial-gradient(ellipse at 0% 70%, rgba(139,94,60,0.13) 0%, transparent 40%),
+        radial-gradient(ellipse at 80% 100%, rgba(201,113,58,0.11) 0%, transparent 45%),
+        var(--cream);
+      color: var(--text-dark);
+      font-family: 'Lora', serif;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+      -webkit-text-size-adjust: 100%;
+    }
+    body::before {
+      content:'';
+      position:fixed;
+      top:5%; left:50%;
+      transform:translateX(-50%);
+      width:70%; height:100%;
+      background-image:url('buddha.png');
+      background-size:cover;
+      background-position:center top;
+      filter:blur(3px) saturate(0.6) opacity(0.11);
+      z-index:0;
+      pointer-events:none;
+    }
+    header,footer,section,nav,main,div { position:relative; z-index:1; }
+
+    /* HEADER */
+    header { background: radial-gradient(ellipse at 20% 50%,#5c3d2e 0%,transparent 60%), radial-gradient(ellipse at 80% 30%,#3b2a1a 0%,transparent 55%), radial-gradient(ellipse at 55% 80%,#6b4423 0%,transparent 50%), radial-gradient(ellipse at 10% 10%,#2e3d22 0%,transparent 50%), radial-gradient(ellipse at 90% 90%,#7a3e1a 0%,transparent 45%), radial-gradient(ellipse at 50% 20%,rgba(232,200,160,0.22) 0%,transparent 45%), radial-gradient(ellipse at 35% 70%,rgba(247,230,200,0.15) 0%,transparent 40%), radial-gradient(ellipse at 70% 55%,rgba(138,158,106,0.18) 0%,transparent 40%), #1e1a12; overflow:hidden; }
+    .header-motif { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; opacity:0.55; }
+    .header-top { display:flex; justify-content:center; align-items:center; padding:20px 16px 12px; }
+    .logo-wrap { border:2px dashed var(--orange-light); border-radius:12px; padding:8px 16px; display:inline-flex; align-items:center; justify-content:center; }
+    .logo-img { height:60px; width:auto; max-width:180px; object-fit:contain; }
+    .header-nav { display:flex; justify-content:space-evenly; align-items:center; flex-wrap:wrap; gap:2px; padding:8px 12px 16px; border-top:1px solid rgba(232,169,106,0.3); }
+    .header-nav a { color:var(--cream); text-decoration:none; font-family:'Cormorant Garamond',serif; font-size:0.82rem; letter-spacing:0.09em; text-transform:uppercase; font-weight:300; padding:8px 6px; transition:color 0.3s; position:relative; white-space:nowrap; -webkit-tap-highlight-color:transparent; min-height:44px; display:inline-flex; align-items:center; }
+    .header-nav a::after { content:''; position:absolute; bottom:4px; left:6px; right:6px; height:1px; background:var(--orange-light); transform:scaleX(0); transition:transform 0.3s; }
+    .header-nav a:hover, .header-nav a.active { color:var(--orange-light); }
+    .header-nav a:hover::after, .header-nav a.active::after { transform:scaleX(1); }
+
+    /* PAGE TITLE */
+    .page-title { text-align:center; padding:40px 20px 32px; }
+    .page-title h1 { font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:300; letter-spacing:0.18em; text-transform:uppercase; color:var(--brown-deep); margin-bottom:8px; }
+    .page-title p { font-size:0.95rem; font-style:italic; color:var(--text-mid); margin-top:12px; }
+    .section-rule { width:60px; height:2px; background:linear-gradient(90deg,var(--orange-warm),var(--brown-light)); margin:0 auto; border-radius:2px; }
+
+    /* FORM WRAPPER */
+    main { max-width:680px; margin:0 auto; padding:0 20px 72px; }
+
+    /* FORM SECTIONS */
+    .form-section { margin-bottom:36px; }
+    .form-section-title { font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:400; letter-spacing:0.12em; text-transform:uppercase; color:var(--green-deep); margin-bottom:20px; padding-bottom:8px; border-bottom:1px solid rgba(196,154,108,0.35); }
+
+    /* FORM FIELDS */
+    .field-group { display:grid; grid-template-columns:1fr; gap:16px; }
+    .field { display:flex; flex-direction:column; gap:6px; }
+    label { font-family:'Cormorant Garamond',serif; font-size:0.88rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--brown-mid); font-weight:400; }
+    label span.required { color:var(--orange-warm); margin-left:2px; }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="datetime-local"],
+    select,
+    textarea {
+      width:100%;
+      background:rgba(247,242,235,0.88);
+      border:1px solid rgba(196,154,108,0.5);
+      border-radius:8px;
+      padding:12px 14px;
+      font-family:'Lora',serif;
+      font-size:0.96rem;
+      color:var(--text-dark);
+      transition:border-color 0.3s, box-shadow 0.3s;
+      -webkit-appearance:none;
+      appearance:none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline:none;
+      border-color:var(--orange-warm);
+      box-shadow:0 0 0 3px rgba(201,113,58,0.15);
+    }
+
+    select {
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238b5e3c' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat:no-repeat;
+      background-position:right 14px center;
+      padding-right:36px;
+      cursor:pointer;
+    }
+
+    textarea { resize:vertical; min-height:130px; line-height:1.7; }
+
+    /* PRIVACY NOTE */
+    .privacy-note { font-size:0.82rem; font-style:italic; color:var(--brown-light); margin-top:6px; padding-left:2px; }
+
+    /* SUBMIT */
+    .submit-wrap { text-align:center; margin-top:40px; }
+    .btn-submit { display:inline-block; background:var(--orange-warm); color:var(--cream); border:none; font-family:'Cormorant Garamond',serif; font-size:1.1rem; letter-spacing:0.15em; text-transform:uppercase; padding:16px 48px; border-radius:50px; cursor:pointer; transition:background 0.3s,transform 0.2s; -webkit-tap-highlight-color:transparent; min-height:52px; line-height:1.4; width:100%; }
+    .btn-submit:hover { background:var(--brown-mid); transform:translateY(-2px); }
+
+    /* SUCCESS MESSAGE */
+    .success-msg { display:none; text-align:center; padding:40px 20px; }
+    .success-msg h2 { font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:300; letter-spacing:0.1em; color:var(--brown-deep); margin-bottom:12px; }
+    .success-msg p { font-size:1rem; font-style:italic; color:var(--text-mid); }
+
+    /* FOOTER */
+    footer { background: radial-gradient(ellipse at 15% 60%,#7a3e1a 0%,transparent 55%), radial-gradient(ellipse at 75% 30%,#5c3d2e 0%,transparent 50%), radial-gradient(ellipse at 45% 90%,#3b4a2f 0%,transparent 50%), radial-gradient(ellipse at 85% 80%,#8b5e3c 0%,transparent 45%), radial-gradient(ellipse at 5% 20%,#6b4423 0%,transparent 45%), #1e1a12; padding:28px 20px; text-align:center; overflow:hidden; }
+    .footer-motif { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; opacity:0.5; }
+    footer p { font-family:'Cormorant Garamond',serif; font-size:0.83rem; letter-spacing:0.07em; color:var(--brown-light); position:relative; z-index:2; }
+    footer a { color:var(--orange-light); text-decoration:none; }
+
+    /* TABLET */
+    @media (min-width:600px) {
+      .logo-img { height:72px; max-width:200px; }
+      .header-nav a { font-size:0.92rem; letter-spacing:0.12em; }
+      .page-title h1 { font-size:2.2rem; }
+      main { padding:0 40px 80px; }
+      .field-group.two-col { grid-template-columns:1fr 1fr; }
+      .btn-submit { width:auto; }
+    }
+
+    /* DESKTOP */
+    @media (min-width:900px) {
+      .header-top { padding:28px 60px 16px; }
+      .logo-img { height:80px; max-width:220px; }
+      .header-nav { padding:10px 60px 20px; }
+      .header-nav a { font-size:1.05rem; letter-spacing:0.14em; }
+    }
+  </style>
+</head>
+<body>
+
+<header role="banner">
+  <svg class="header-motif" viewBox="0 0 1440 140" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <filter id="hblur"><feGaussianBlur stdDeviation="8"/></filter>
+      <filter id="hblur-soft"><feGaussianBlur stdDeviation="14"/></filter>
+    </defs>
+    <ellipse cx="120"  cy="65" rx="210" ry="78" fill="#c9713a" opacity="0.45" filter="url(#hblur)"/>
+    <ellipse cx="520"  cy="28" rx="255" ry="65" fill="#8a9e6a" opacity="0.35" filter="url(#hblur)"/>
+    <ellipse cx="920"  cy="98" rx="235" ry="72" fill="#c49a6c" opacity="0.4"  filter="url(#hblur)"/>
+    <ellipse cx="1300" cy="48" rx="195" ry="62" fill="#e8a96a" opacity="0.35" filter="url(#hblur)"/>
+    <ellipse cx="700"  cy="118" rx="165" ry="46" fill="#5a6e42" opacity="0.3" filter="url(#hblur)"/>
+    <ellipse cx="1440" cy="22" rx="130" ry="42" fill="#8b5e3c" opacity="0.4"  filter="url(#hblur)"/>
+    <ellipse cx="380"  cy="58" rx="195" ry="52" fill="#f0d9b5" opacity="0.2"  filter="url(#hblur-soft)"/>
+    <ellipse cx="1100" cy="38" rx="158" ry="44" fill="#e8c98a" opacity="0.18" filter="url(#hblur-soft)"/>
+    <ellipse cx="760"  cy="72" rx="168" ry="48" fill="#d4b896" opacity="0.2"  filter="url(#hblur-soft)"/>
+    <path d="M0,72 C180,32 380,112 580,68 C780,24 980,104 1180,60 C1320,28 1410,70 1440,52 L1440,140 L0,140 Z" fill="#c49a6c" opacity="0.2"/>
+    <path d="M0,100 C230,60 470,130 710,94 C950,58 1170,120 1400,86 L1440,80 L1440,140 L0,140 Z" fill="#e8a96a" opacity="0.15"/>
+  </svg>
+  <div class="header-top">
+    <div class="logo-wrap">
+      <img src="logo.png" alt="Calm Hippo" class="logo-img" width="180" height="72"/>
+    </div>
+  </div>
+  <nav class="header-nav" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="rates.html">Rates</a>
+    <a href="pics.html">Pics</a>
+    <a href="book.html" class="active" aria-current="page">Book Now</a>
+  </nav>
+</header>
+
+<div class="page-title">
+  <h1>Book a Session</h1>
+  <div class="section-rule" aria-hidden="true"></div>
+  <p>Fill out the form below and Emily will be in touch to confirm your appointment.</p>
+</div>
+
+<main aria-label="Booking form">
+
+  <form action="https://formspree.io/f/xyknyogk" method="POST" id="booking-form" novalidate>
+
+    <!-- BASIC INFO -->
+    <div class="form-section">
+      <h2 class="form-section-title">Your Information</h2>
+
+      <div class="field-group two-col" style="margin-bottom:16px;">
+        <div class="field">
+          <label for="name">Full Name <span class="required" aria-hidden="true">*</span></label>
+          <input type="text" id="name" name="name" required placeholder="Your full name" autocomplete="name"/>
+        </div>
+        <div class="field">
+          <label for="phone">Phone Number <span class="required" aria-hidden="true">*</span></label>
+          <input type="tel" id="phone" name="phone" required placeholder="(707) 000-0000" autocomplete="tel"/>
+        </div>
+      </div>
+
+      <div class="field-group" style="margin-bottom:16px;">
+        <div class="field">
+          <label for="email">Email Address <span class="required" aria-hidden="true">*</span></label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com" autocomplete="email"/>
+        </div>
+      </div>
+
+      <div class="field-group two-col">
+        <div class="field">
+          <label for="location">Preferred Location <span class="required" aria-hidden="true">*</span></label>
+          <select id="location" name="location" required>
+            <option value="" disabled selected>Select a location</option>
+            <option value="Petaluma">Petaluma Studio</option>
+            <option value="Willits">Willits Studio</option>
+            <option value="In-Home">In-Home Visit</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="datetime">Preferred Date &amp; Time</label>
+          <input type="datetime-local" id="datetime" name="preferred_datetime"/>
+        </div>
+      </div>
+    </div>
+
+    <!-- SESSION TYPE -->
+    <div class="form-section">
+      <h2 class="form-section-title">Session Details</h2>
+
+      <div class="field-group two-col" style="margin-bottom:16px;">
+        <div class="field">
+          <label for="session_type">Session Type</label>
+          <select id="session_type" name="session_type">
+            <option value="" disabled selected>Select a session</option>
+            <option value="Relaxation Massage">Relaxation Massage</option>
+            <option value="Deep Tissue / Pain Relief">Deep Tissue / Pain Relief</option>
+            <option value="Hot Stone Therapy">Hot Stone Therapy</option>
+            <option value="Cupping">Cupping</option>
+            <option value="Gua Sha">Gua Sha</option>
+            <option value="Sound Healing — Private">Sound Healing — Private</option>
+            <option value="Sound Healing — Couples">Sound Healing — Couples</option>
+            <option value="Sound Healing — Group">Sound Healing — Group</option>
+            <option value="In-Home Massage">In-Home Massage</option>
+            <option value="Chair Massage / Event">Chair Massage / Event</option>
+            <option value="Not Sure — Let Emily Recommend">Not Sure — Let Emily Recommend</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="duration">Session Length</label>
+          <select id="duration" name="duration">
+            <option value="" disabled selected>Select a length</option>
+            <option value="60 minutes">60 Minutes</option>
+            <option value="75 minutes">75 Minutes</option>
+            <option value="90 minutes">90 Minutes</option>
+            <option value="Not Sure">Not Sure</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- HEALTH HISTORY -->
+    <div class="form-section">
+      <h2 class="form-section-title">Health History</h2>
+      <div class="field">
+        <label for="health_history">Prior Injuries, Surgeries &amp; Sensitive Areas</label>
+        <textarea id="health_history" name="health_history" placeholder="Please share any injuries, surgeries, chronic conditions, areas of sensitivity, or anything else Emily should know before your session. All information is kept strictly confidential."></textarea>
+        <p class="privacy-note">Your health information is confidential and used only to ensure the safest, most effective session for your body.</p>
+      </div>
+    </div>
+
+    <!-- ADDITIONAL NOTES -->
+    <div class="form-section">
+      <h2 class="form-section-title">Anything Else?</h2>
+      <div class="field">
+        <label for="notes">Additional Notes or Questions</label>
+        <textarea id="notes" name="notes" placeholder="Any other requests, questions, or things you'd like Emily to know." style="min-height:100px;"></textarea>
+      </div>
+    </div>
+
+    <div class="submit-wrap">
+      <button type="submit" class="btn-submit">Send Booking Request</button>
+    </div>
+
+  </form>
+
+  <!-- SUCCESS MESSAGE (shown after submit) -->
+  <div class="success-msg" id="success-msg" role="alert" aria-live="polite">
+    <h2>Thank you!</h2>
+    <p>Your booking request has been received. Emily will be in touch shortly to confirm your session.</p>
+  </div>
+
+</main>
+
+<footer role="contentinfo">
+  <svg class="footer-motif" viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs><filter id="fblur"><feGaussianBlur stdDeviation="7"/></filter></defs>
+    <ellipse cx="150"  cy="45" rx="200" ry="55" fill="#c9713a" opacity="0.45" filter="url(#fblur)"/>
+    <ellipse cx="550"  cy="25" rx="220" ry="50" fill="#8a9e6a" opacity="0.35" filter="url(#fblur)"/>
+    <ellipse cx="950"  cy="65" rx="210" ry="55" fill="#e8a96a" opacity="0.4"  filter="url(#fblur)"/>
+    <ellipse cx="1300" cy="30" rx="180" ry="50" fill="#8b5e3c" opacity="0.4"  filter="url(#fblur)"/>
+    <path d="M0,35 C240,65 480,15 720,40 C960,65 1200,20 1440,38 L1440,90 L0,90 Z" fill="#c49a6c" opacity="0.2"/>
+    <path d="M0,58 C300,30 600,75 900,50 C1200,25 1380,60 1440,48 L1440,90 L0,90 Z" fill="#e8a96a" opacity="0.15"/>
+  </svg>
+  <p style="margin-bottom:8px;">&copy; 2026 Calm Hippo &nbsp;&middot;&nbsp; Petaluma &amp; Willits, California</p>
+  <p><a href="tel:7073641202">707.364.1202</a> &nbsp;&middot;&nbsp; <a href="mailto:calmhippo@yahoo.com">calmhippo@yahoo.com</a></p>
+</footer>
+
+<script>
+  const form = document.getElementById('booking-form');
+  const successMsg = document.getElementById('success-msg');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        form.style.display = 'none';
+        successMsg.style.display = 'block';
+        window.scrollTo({ top: successMsg.offsetTop - 40, behavior: 'smooth' });
+      } else {
+        alert('Something went wrong. Please try again or contact Emily directly at 707.364.1202.');
+      }
+    } catch {
+      alert('Something went wrong. Please try again or contact Emily directly at 707.364.1202.');
+    }
+  });
+</script>
+
+</body>
+</html>
