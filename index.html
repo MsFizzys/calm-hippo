@@ -134,7 +134,8 @@
     .locations-section h2 { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:300; letter-spacing:0.12em; text-transform:uppercase; color:var(--green-deep); margin-bottom:8px; }
     .locations-section > p { font-size:0.92rem; color:var(--text-mid); font-style:italic; margin-bottom:24px; }
     .locations-cards { display:flex; flex-direction:column; align-items:center; gap:14px; }
-    .location-card { background:rgba(247,242,235,0.92); border-left:3px solid var(--orange-warm); border-radius:8px; padding:18px 28px; width:100%; max-width:300px; box-shadow:0 2px 16px rgba(92,61,46,0.1); }
+    .location-card { background:rgba(247,242,235,0.92); border-left:3px solid var(--orange-warm); border-radius:8px; padding:18px 28px; width:100%; max-width:300px; box-shadow:0 2px 16px rgba(92,61,46,0.1); text-decoration:none; display:block; transition:transform 0.2s, box-shadow 0.2s; }
+    .location-card:hover { transform:translateY(-3px); box-shadow:0 6px 24px rgba(92,61,46,0.18); }
     .location-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:400; color:var(--brown-deep); margin-bottom:4px; }
     .location-card p { font-size:0.86rem; color:var(--text-mid); font-style:italic; }
 
@@ -227,11 +228,9 @@
 <div class="tagline-strip" role="doc-subtitle">
   <span>Massage</span>
   <span class="tagline-divider" aria-hidden="true">—</span>
-  <span>yoga</span>
-  <span class="tagline-divider" aria-hidden="true">—</span>
   <span>Sound Healing</span>
   <span class="tagline-divider" aria-hidden="true">—</span>
-  <span>Guided Meditation</span>
+  <span>Meditation</span>
 </div>
 
 <section class="about-section" aria-labelledby="about-heading">
@@ -243,7 +242,7 @@
   </svg>
   <div class="about-inner">
     <div class="section-rule" aria-hidden="true"></div>
-    <p class="fade-up">Emily Stevens has been practicing intuitive bodywork for over twenty-two years. Her approach is simple — she listens to your body and responds with the techniques it needs. Drawing from a wide range of modalities including hot stone therapy, cupping, gua sha, Ayurveda, Swedish soft and deep tissue, lymphatic drainage, tuning forks, sound healing. While working exclusively with organic oils, Emily brings both knowledge and attentiveness to every session.</p>
+    <p class="fade-up">Emily Stevens has been practicing intuitive bodywork for over twenty-two years. Her approach is simple — she listens to your body and responds with the techniques it needs. Drawing from a wide range of modalities including hot stone therapy, cupping, gua sha, tuning forks, and sound healing. While working exclusively with organic oils, Emily brings both knowledge and attentiveness to every session.</p>
     <p class="fade-up">She works with a diverse range of clients across all ages and circumstances — from those managing serious injuries or physical limitations, to athletes maintaining peak performance, and those simply seeking relaxation and self care. No two sessions are the same, because no two bodies are.</p>
     <p class="fade-up">Emily sees clients at her studios in Petaluma and Willits, California. Whatever brings you through the door, you will be met with skill, intention, and respect.</p>
   </div>
@@ -261,9 +260,6 @@
     <span class="modality-pill" role="listitem">Relaxation Massage</span>
     <span class="modality-pill" role="listitem">Injury Recovery</span>
     <span class="modality-pill" role="listitem">Organic Oils</span>
-    <span class="modality-pill" role="listitem">Ayurveda</span>
-    <span class="modality-pill" role="listitem">Yoga</span>
-    <span class="modality-pill" role="listitem">Lymphatic drainage</span>
   </div>
 </section>
 
@@ -271,14 +267,16 @@
   <h2 id="locations-heading">Studio Locations</h2>
   <p>Serving Sonoma and Mendocino counties</p>
   <div class="locations-cards">
-    <article class="location-card">
-      <h3>509 2nd street Petaluma, CA 94952</h3>
+    <a href="https://www.google.com/maps/search/?api=1&query=509+2nd+Street+Petaluma+CA+94952" target="_blank" rel="noopener" class="location-card">
+      <h3>Petaluma, CA</h3>
+      <p>509 2nd Street</p>
       <p>Sonoma County</p>
-    </article>
-    <article class="location-card">
-      <h3> 34 E San Francisco Ave Willits, CA 95490</h3>
+    </a>
+    <a href="https://www.google.com/maps/search/?api=1&query=34+E+San+Francisco+Ave+Willits+CA+95490" target="_blank" rel="noopener" class="location-card">
+      <h3>Willits, CA</h3>
+      <p>34 E San Francisco Ave</p>
       <p>Mendocino County</p>
-    </article>
+    </a>
   </div>
 </section>
 
