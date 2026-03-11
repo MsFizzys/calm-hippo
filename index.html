@@ -69,12 +69,13 @@
     body::before {
       content:'';
       position:fixed;
-      top:-5%; right:-8%;
-      width:75%; height:110%;
+      top:0; left:50%;
+      transform:translateX(-50%);
+      width:105%; height:120%;
       background-image:url('buddha.png');
       background-size:cover;
       background-position:center;
-      filter:blur(3px) saturate(0.7) opacity(0.13);
+      filter:blur(3px) saturate(1.0) opacity(0.25);
       z-index:0;
       pointer-events:none;
     }
