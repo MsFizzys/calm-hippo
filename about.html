@@ -45,15 +45,16 @@
       position: relative;
       -webkit-text-size-adjust: 100%;
     }
-    body::before {
+     body::before {
       content:'';
       position:fixed;
-      top:0%; right:10%;
-      width:65%; height:100%;
+      top:0; left:50%;
+      transform:translateX(-50%);
+      width:75%; height:110%;
       background-image:url('buddha.png');
       background-size:cover;
-      background-position:center top;
-      filter:blur(3px) saturate(0.6) opacity(0.11);
+      background-position:center;
+      filter:blur(3px) saturate(0.7) opacity(0.13);
       z-index:0;
       pointer-events:none;
     }
