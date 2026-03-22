@@ -59,8 +59,16 @@
     }
     header,footer,section,nav,main,div { position:relative; z-index:1; }
 
-    /* HEADER */
-    header { background: radial-gradient(ellipse at 20% 50%,#5c3d2e 0%,transparent 60%), radial-gradient(ellipse at 80% 30%,#3b2a1a 0%,transparent 55%), radial-gradient(ellipse at 55% 80%,#6b4423 0%,transparent 50%), radial-gradient(ellipse at 10% 10%,#2e3d22 0%,transparent 50%), radial-gradient(ellipse at 90% 90%,#7a3e1a 0%,transparent 45%), radial-gradient(ellipse at 50% 20%,rgba(232,200,160,0.22) 0%,transparent 45%), radial-gradient(ellipse at 35% 70%,rgba(247,230,200,0.15) 0%,transparent 40%), radial-gradient(ellipse at 70% 55%,rgba(138,158,106,0.18) 0%,transparent 40%), #1e1a12; overflow:hidden; }
+        /* HEADER */
+    header {
+      background:
+        linear-gradient(to bottom,
+          rgba(18,13,8,0.52) 0%,
+          rgba(30,20,10,0.38) 40%,
+          rgba(18,13,8,0.55) 100%),
+        url('header-photo.png') center 30% / cover no-repeat;
+      overflow:hidden;
+    }
     .header-motif { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; opacity:0.55; }
     .header-top { display:flex; justify-content:center; align-items:center; padding:20px 16px 12px; }
     .logo-wrap { display:inline-flex; align-items:center; justify-content:center; }
@@ -109,7 +117,7 @@
     .btn-book:hover { background:var(--brown-mid); transform:translateY(-2px); }
 
     /* FOOTER */
-    footer { background: radial-gradient(ellipse at 15% 60%,#7a3e1a 0%,transparent 55%), radial-gradient(ellipse at 75% 30%,#5c3d2e 0%,transparent 50%), radial-gradient(ellipse at 45% 90%,#3b4a2f 0%,transparent 50%), radial-gradient(ellipse at 85% 80%,#8b5e3c 0%,transparent 45%), radial-gradient(ellipse at 5% 20%,#6b4423 0%,transparent 45%), #1e1a12; padding:28px 20px; text-align:center; overflow:hidden; }
+        footer { background: linear-gradient(to bottom, rgba(18,13,8,0.48) 0%, rgba(22,15,8,0.60) 100%), url('footer-photo.png') center 15% / cover no-repeat; padding:28px 20px; text-align:center; overflow:hidden; }
     .footer-motif { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; opacity:0.5; }
     footer p { font-family:'Cormorant Garamond',serif; font-size:0.83rem; letter-spacing:0.07em; color:var(--brown-light); position:relative; z-index:2; }
     footer a { color:var(--orange-light); text-decoration:none; }
@@ -137,23 +145,6 @@
 <body>
 
 <header role="banner">
-  <svg class="header-motif" viewBox="0 0 1440 140" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <defs>
-      <filter id="hblur"><feGaussianBlur stdDeviation="8"/></filter>
-      <filter id="hblur-soft"><feGaussianBlur stdDeviation="14"/></filter>
-    </defs>
-    <ellipse cx="250" cy="50" rx="210" ry="78" fill="#c9713a" opacity="0.45" filter="url(#hblur)"/>
-    <ellipse cx="700" cy="20" rx="255" ry="68" fill="#8a9e6a" opacity="0.35" filter="url(#hblur)"/>
-    <ellipse cx="1050" cy="95" rx="235" ry="72" fill="#c49a6c" opacity="0.4" filter="url(#hblur)"/>
-    <ellipse cx="1380" cy="55" rx="185" ry="62" fill="#e8a96a" opacity="0.35" filter="url(#hblur)"/>
-    <ellipse cx="480" cy="118" rx="165" ry="48" fill="#5a6e42" opacity="0.3" filter="url(#hblur)"/>
-    <ellipse cx="900" cy="18" rx="138" ry="43" fill="#8b5e3c" opacity="0.4" filter="url(#hblur)"/>
-    <ellipse cx="550" cy="62" rx="195" ry="53" fill="#f0d9b5" opacity="0.2" filter="url(#hblur-soft)"/>
-    <ellipse cx="150" cy="38" rx="158" ry="44" fill="#e8c98a" opacity="0.18" filter="url(#hblur-soft)"/>
-    <ellipse cx="1200" cy="75" rx="168" ry="49" fill="#d4b896" opacity="0.2" filter="url(#hblur-soft)"/>
-    <path d="M0,78 C170,38 370,118 570,74 C770,30 970,106 1170,64 C1310,34 1410,74 1440,57 L1440,140 L0,140 Z" fill="#c49a6c" opacity="0.2"/>
-    <path d="M0,102 C230,62 470,132 710,96 C950,60 1170,122 1400,88 L1440,82 L1440,140 L0,140 Z" fill="#e8a96a" opacity="0.15"/>
-  </svg>
   <div class="header-top">
     <div class="logo-wrap">
       <img src="logo.png" alt="Calm Hippo" class="logo-img" width="180" height="72"/>
@@ -219,15 +210,6 @@
 </section>
 
 <footer role="contentinfo">
-  <svg class="footer-motif" viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <defs><filter id="fblur"><feGaussianBlur stdDeviation="7"/></filter></defs>
-    <ellipse cx="150" cy="45" rx="200" ry="55" fill="#c9713a" opacity="0.45" filter="url(#fblur)"/>
-    <ellipse cx="550" cy="25" rx="220" ry="50" fill="#8a9e6a" opacity="0.35" filter="url(#fblur)"/>
-    <ellipse cx="950" cy="65" rx="210" ry="55" fill="#e8a96a" opacity="0.4" filter="url(#fblur)"/>
-    <ellipse cx="1300" cy="30" rx="180" ry="50" fill="#8b5e3c" opacity="0.4" filter="url(#fblur)"/>
-    <path d="M0,35 C240,65 480,15 720,40 C960,65 1200,20 1440,38 L1440,90 L0,90 Z" fill="#c49a6c" opacity="0.2"/>
-    <path d="M0,58 C300,30 600,75 900,50 C1200,25 1380,60 1440,48 L1440,90 L0,90 Z" fill="#e8a96a" opacity="0.15"/>
-  </svg>
   <p style="margin-bottom:8px;">&copy; 2026 Calm Hippo &nbsp;&middot;&nbsp; Petaluma &amp; Willits, California</p>
   <p><a href="tel:7073641202">707.364.1202</a> &nbsp;&middot;&nbsp; <a href="/cdn-cgi/l/email-protection#ea8f87998389868faa9988898d8685888b86c4848f9e"><span class="__cf_email__" data-cfemail="a7c2cad4cec4cbc2e7d4c5c4c0cbc8c5c6cb89c9c2d3">[email&#160;protected]</span></a></p>
 </footer>
